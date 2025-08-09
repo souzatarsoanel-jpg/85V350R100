@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARQV30 Enhanced v2.0 - Análise Arqueológica Ultra-Detalhada</title>
+
+    <!-- Enhanced CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enhanced_ui.css') }}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+    <!-- Enhanced Header -->
+    <header class="enhanced-header">
+        <div class="header-content">
+            <div class="logo-enhanced">
+                <div class="logo-icon">
+                    🧠
+                </div>
+                <div class="logo-text">
+                    <h1>ARQV30 Enhanced</h1>
+                    <div class="version">v2.0 - Análise Arqueológica Profissional</div>
+                </div>
+            </div>
+
+            <div class="header-status">
+                <div style="display: flex; gap: var(--space-4); align-items: center;">
+                    <div class="quality-indicator">
+                        <div class="quality-badge premium">
+                            <i class="fas fa-crown"></i>
+                            <span>Premium</span>
+                        </div>
+                    </div>
+                    <a href="/forensic" class="btn-secondary-enhanced" style="text-decoration: none; font-size: 0.875rem; padding: var(--space-2) var(--space-4);">
+                        <i class="fas fa-microscope"></i>
+                        Análise Forense
+                    </a>
+                </div>
+                <div class="status-enhanced status-online" id="systemStatus">
+                    <div class="status-dot"></div>
+                    <span>Sistema Ultra-Robusto Operacional</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main style="min-height: 100vh; padding: var(--space-8) 0;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 var(--space-6);">
+
+            <!-- Hero Section Professional -->
+            <section class="hero-professional">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>Sistema de Análise Profissional</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Análise Arqueológica
+                        <span class="gradient-text">Ultra-Detalhada</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Sistema avançado de agentes psicológicos especializados com Gemini 2.5 Pro, 
+                        WebSailor e extração massiva de dados reais. Zero simulação, máxima precisão.
+                    </p>
+
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🔬</div>
+                            <div class="feature-content">
+                                <h4>12 Camadas Arqueológicas</h4>
+                                <p>Análise forense profunda</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🧠</div>
+                            <div class="feature-content">
+                                <h4>19 Drivers Mentais</h4>
+                                <p>Gatilhos psicológicos universais</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🎭</div>
+                            <div class="feature-content">
+                                <h4>Arsenal PROVIs</h4>
+                                <p>Provas visuais que destroem objeções</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <div class="feature-content">
+                                <h4>Sistema Anti-Objeção</h4>
+                                <p>Neutralização psicológica completa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="analysis-preview">
+                        <div class="preview-screen">
+                            <div class="preview-header">
+                                <div class="preview-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="preview-title">Análise em Execução</div>
+                            </div>
+                            <div class="preview-content">
+                                <div class="analysis-layer" style="--delay: 0s">
+                                    <i class="fas fa-search"></i>
+                                    <span>Pesquisa Web Massiva</span>
+                                    <div class="layer-progress"></div>
+                                </div>
+                                <div class="analysis-layer" style="--delay: 0.2s">
+                                    <i class="fas fa-brain"></i>
+                                    <span>Avatar Psicológico</span>
+                                    <div class="layer-progress"></div>
+                                </div>
+                                <div class="analysis-layer" style="--delay: 0.4s">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>Drivers Mentais</span>
+                                    <div class="layer-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enhanced Analysis Form -->
+            <section class="analysis-form-section">
+                <div class="form-container-professional">
+                    <div class="form-header">
+                        <h2>Configure Sua Análise Profissional</h2>
+                        <p>Forneça os dados do seu projeto para uma análise arqueológica completa e precisa</p>
+                    </div>
+
+                    <form id="enhancedAnalysisForm" class="professional-form">
+                        <!-- Progress Steps -->
+                        <div class="form-steps">
+                            <div class="step active" data-step="1">
+                                <div class="step-number">1</div>
+                                <div class="step-info">
+                                    <div class="step-title">Informações Básicas</div>
+                                    <div class="step-description">Dados fundamentais do projeto</div>
+                                </div>
+                            </div>
+                            <div class="step" data-step="2">
+                                <div class="step-number">2</div>
+                                <div class="step-info">
+                                    <div class="step-title">Contexto Psicológico</div>
+                                    <div class="step-description">Perfil comportamental</div>
+                                </div>
+                            </div>
+                            <div class="step" data-step="3">
+                                <div class="step-number">3</div>
+                                <div class="step-info">
+                                    <div class="step-title">Pesquisa Avançada</div>
+                                    <div class="step-description">Configurações de busca</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 1: Basic Information -->
+                        <div class="form-step active" data-step="1">
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <div class="section-icon">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="section-title">Informações do Projeto</h3>
+                                        <p class="section-subtitle">Dados básicos para análise arqueológica profissional</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid">
+                                    <div class="input-group-enhanced full-width">
+                                        <label class="input-label-enhanced required" for="segmento">
+                                            <i class="fas fa-bullseye"></i>
+                                            Segmento de Mercado
+                                        </label>
+                                        <input type="text" id="segmento" name="segmento" class="input-enhanced" required 
+                                               placeholder="Ex: Produtos Digitais, Consultoria, E-commerce, Saúde, Educação...">
+                                        <div class="input-hint">Seja específico para obter análises mais precisas</div>
+                                    </div>
+
+                                    <div class="input-group-enhanced">
+                                        <label class="input-label-enhanced" for="produto">
+                                            <i class="fas fa-box"></i>
+                                            Produto/Serviço
+                                        </label>
+                                        <input type="text" id="produto" name="produto" class="input-enhanced"
+                                               placeholder="Nome do seu produto ou serviço">
+                                    </div>
+
+                                    <div class="input-group-enhanced">
+                                        <label class="input-label-enhanced" for="preco">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            Preço (R$)
+                                        </label>
+                                        <input type="number" id="preco" name="preco" class="input-enhanced" step="0.01"
+                                               placeholder="997.00">
+                                    </div>
+
+                                    <div class="input-group-enhanced full-width">
+                                        <label class="input-label-enhanced" for="publico">
+                                            <i class="fas fa-users"></i>
+                                            Público-Alvo Detalhado
+                                        </label>
+                                        <textarea id="publico" name="publico" class="input-enhanced textarea-enhanced" rows="4"
+                                                  placeholder="Descreva detalhadamente seu público-alvo ideal, incluindo dores, desejos e características psicológicas..."></textarea>
+                                        <div class="input-hint">Quanto mais detalhes, melhor será o avatar gerado</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Psychological Context -->
+                        <div class="form-step" data-step="2">
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <div class="section-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="section-title">Contexto Psicológico</h3>
+                                        <p class="section-subtitle">Informações para análise visceral profunda do comportamento</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid">
+                                    <div class="input-group-enhanced">
+                                        <label class="input-label-enhanced" for="objetivo_receita">
+                                            <i class="fas fa-chart-line"></i>
+                                            Objetivo de Receita (R$)
+                                        </label>
+                                        <input type="number" id="objetivo_receita" name="objetivo_receita" class="input-enhanced" step="0.01"
+                                               placeholder="100000.00">
+                                    </div>
+
+                                    <div class="input-group-enhanced">
+                                        <label class="input-label-enhanced" for="orcamento_marketing">
+                                            <i class="fas fa-coins"></i>
+                                            Orçamento Marketing (R$)
+                                        </label>
+                                        <input type="number" id="orcamento_marketing" name="orcamento_marketing" class="input-enhanced" step="0.01"
+                                               placeholder="10000.00">
+                                    </div>
+
+                                    <div class="input-group-enhanced">
+                                        <label class="input-label-enhanced" for="prazo_lancamento">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Prazo de Lançamento
+                                        </label>
+                                        <select id="prazo_lancamento" name="prazo_lancamento" class="input-enhanced">
+                                            <option value="">Selecione...</option>
+                                            <option value="1-3 meses">1-3 meses</option>
+                                            <option value="3-6 meses">3-6 meses</option>
+                                            <option value="6-12 meses">6-12 meses</option>
+                                            <option value="Mais de 1 ano">Mais de 1 ano</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group-enhanced">
+                                        <label class="input-label-enhanced" for="concorrentes">
+                                            <i class="fas fa-chess"></i>
+                                            Principais Concorrentes
+                                        </label>
+                                        <input type="text" id="concorrentes" name="concorrentes" class="input-enhanced"
+                                               placeholder="Liste os principais concorrentes separados por vírgula">
+                                    </div>
+
+                                    <div class="input-group-enhanced full-width">
+                                        <label class="input-label-enhanced" for="dados_adicionais">
+                                            <i class="fas fa-plus-circle"></i>
+                                            Contexto Adicional para Análise Psicológica
+                                        </label>
+                                        <textarea id="dados_adicionais" name="dados_adicionais" class="input-enhanced textarea-enhanced" rows="6"
+                                                  placeholder="Informações relevantes: dores específicas do público, objeções conhecidas, histórico de lançamentos, características psicológicas, etc..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Advanced Research -->
+                        <div class="form-step" data-step="3">
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <div class="section-icon">
+                                        <i class="fas fa-ship"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="section-title">Pesquisa Arqueológica Avançada</h3>
+                                        <p class="section-subtitle">WebSailor + Gemini 2.5 Pro para escavação profunda de dados reais</p>
+                                    </div>
+                                </div>
+
+                                <div class="research-config">
+                                    <div class="input-group-enhanced full-width">
+                                        <label class="input-label-enhanced" for="query">
+                                            <i class="fas fa-search"></i>
+                                            Query de Pesquisa Arqueológica
+                                        </label>
+                                        <input type="text" id="query" name="query" class="input-enhanced"
+                                               placeholder="Ex: mercado telemedicina Brasil 2024 tendências oportunidades crescimento">
+
+                                        <div class="research-preview">
+                                            <div class="preview-header">
+                                                <i class="fas fa-info-circle"></i>
+                                                <span>Pesquisa Arqueológica Profunda</span>
+                                            </div>
+                                            <div class="preview-content">
+                                                <div class="research-flow">
+                                                    <div class="flow-item">
+                                                        <div class="flow-icon websailor">
+                                                            <i class="fas fa-ship"></i>
+                                                        </div>
+                                                        <div class="flow-text">
+                                                            <strong>WebSailor</strong>
+                                                            <span>Navegação inteligente e coleta massiva</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="flow-arrow">
+                                                        <i class="fas fa-arrow-right"></i>
+                                                    </div>
+
+                                                    <div class="flow-item">
+                                                        <div class="flow-icon gemini">
+                                                            <i class="fas fa-robot"></i>
+                                                        </div>
+                                                        <div class="flow-text">
+                                                            <strong>Gemini 2.5 Pro</strong>
+                                                            <span>Análise forense avançada</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="flow-arrow">
+                                                        <i class="fas fa-arrow-right"></i>
+                                                    </div>
+
+                                                    <div class="flow-item">
+                                                        <div class="flow-icon agents">
+                                                            <i class="fas fa-users-cog"></i>
+                                                        </div>
+                                                        <div class="flow-text">
+                                                            <strong>Agentes Psicológicos</strong>
+                                                            <span>Análise comportamental</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="research-options">
+                                        <div class="option-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="deep_research" checked>
+                                                <span class="checkbox-custom"></span>
+                                                <div class="checkbox-content">
+                                                    <strong>Pesquisa Profunda</strong>
+                                                    <span>Múltiplas camadas de análise</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div class="option-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="competitor_analysis" checked>
+                                                <span class="checkbox-custom"></span>
+                                                <div class="checkbox-content">
+                                                    <strong>Análise de Concorrentes</strong>
+                                                    <span>Mapeamento competitivo</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <div class="option-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" id="trend_analysis" checked>
+                                                <span class="checkbox-custom"></span>
+                                                <div class="checkbox-content">
+                                                    <strong>Análise de Tendências</strong>
+                                                    <span>Predições futuras</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="form-navigation">
+                            <button type="button" id="prevStep" class="btn-secondary-enhanced" style="display: none;">
+                                <i class="fas fa-arrow-left"></i>
+                                Anterior
+                            </button>
+
+                            <div class="nav-spacer"></div>
+
+                            <button type="button" id="nextStep" class="btn-primary-enhanced">
+                                Próximo
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+
+                            <button type="submit" id="submitForm" class="btn-primary-enhanced start-analysis" style="display: none;">
+                                <i class="fas fa-microscope"></i>
+                                <span>Iniciar Análise Arqueológica</span>
+                                <div class="btn-glow"></div>
+                            </button>
+                        </div>
+
+                        <div class="form-footer">
+                            <div class="quality-guarantees">
+                                <div class="guarantee-item">
+                                    <i class="fas fa-shield-check"></i>
+                                    <span>100% Dados Reais</span>
+                                </div>
+                                <div class="guarantee-item">
+                                    <i class="fas fa-microscope"></i>
+                                    <span>12 Camadas de Análise</span>
+                                </div>
+                                <div class="guarantee-item">
+                                    <i class="fas fa-brain"></i>
+                                    <span>19 Drivers Mentais</span>
+                                </div>
+                                <div class="guarantee-item">
+                                    <i class="fas fa-ban"></i>
+                                    <span>Zero Simulação</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Enhanced Progress Area -->
+            <section id="progressArea" style="display: none;" class="progress-section-professional">
+                <div class="progress-container-enhanced">
+                    <div class="progress-header-professional">
+                        <div class="progress-title-enhanced">
+                            <i class="fas fa-microscope rotating"></i>
+                            <h3>Análise Arqueológica em Execução</h3>
+                        </div>
+                        <div class="progress-subtitle-enhanced">
+                            Agentes psicológicos executando escavação forense de dados reais
+                        </div>
+                    </div>
+
+                    <div class="progress-visual">
+                        <div class="progress-circle">
+                            <div class="progress-circle-inner">
+                                <div class="progress-percentage" id="progressPercentage">0%</div>
+                                <div class="progress-step-info" id="currentStepEnhanced">Iniciando...</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Etapa:</span>
+                                <span class="detail-value" id="stepCounterEnhanced">0/13</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Tempo restante:</span>
+                                <span class="detail-value" id="estimatedTimeEnhanced">--:--</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Dados coletados:</span>
+                                <span class="detail-value" id="dataCollectedEnhanced">0 KB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="agents-status">
+                        <div class="agent-card">
+                            <div class="agent-icon websailor">
+                                <i class="fas fa-ship"></i>
+                            </div>
+                            <div class="agent-info">
+                                <div class="agent-name">WebSailor</div>
+                                <div class="agent-status">Navegando</div>
+                            </div>
+                            <div class="agent-progress">
+                                <div class="progress-bar mini"></div>
+                            </div>
+                        </div>
+
+                        <div class="agent-card">
+                            <div class="agent-icon gemini">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="agent-info">
+                                <div class="agent-name">Gemini 2.5 Pro</div>
+                                <div class="agent-status">Analisando</div>
+                            </div>
+                            <div class="agent-progress">
+                                <div class="progress-bar mini"></div>
+                            </div>
+                        </div>
+
+                        <div class="agent-card">
+                            <div class="agent-icon psychological">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="agent-info">
+                                <div class="agent-name">Agentes Psicológicos</div>
+                                <div class="agent-status">Processando</div>
+                            </div>
+                            <div class="agent-progress">
+                                <div class="progress-bar mini"></div>
+                            </div>
+                        </div>
+
+                        <div class="agent-card">
+                            <div class="agent-icon validator">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <div class="agent-info">
+                                <div class="agent-name">Validador</div>
+                                <div class="agent-status">Aguardando</div>
+                            </div>
+                            <div class="agent-progress">
+                                <div class="progress-bar mini"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enhanced Results Area -->
+            <section id="resultsArea" style="display: none;" class="results-section-professional">
+                <!-- Será preenchido dinamicamente pelo JavaScript -->
+            </section>
+
+            <!-- Progress Container (será mostrado durante análise) -->
+            <section id="progress-container" style="display: none;" class="progress-section">
+                <div class="progress-wrapper">
+                    <div id="progress-bar" class="progress-bar"></div>
+                    <div id="progress-text" class="progress-text">Iniciando...</div>
+                    <div id="progress-details" class="progress-details"></div>
+                </div>
+            </section>
+
+            <!-- Agent Capabilities Container -->
+            <section id="agent-capabilities" class="agent-capabilities-section" style="display: none;">
+                <!-- Será preenchido dinamicamente -->
+            </section>
+
+            <!-- History Container -->
+            <section id="history-container" class="history-section" style="display: none;">
+                <!-- Será preenchido dinamicamente -->
+            </section>
+
+            <!-- Results Container -->
+            <section id="results-container" style="display: none;" class="results-container">
+                <div id="avatar_ultra_detalhado-container" class="result-section"></div>
+                <div id="drivers_mentais_customizados-container" class="result-section"></div>
+                <div id="provas_visuais_sugeridas-container" class="result-section"></div>
+                <div id="sistema_anti_objecao-container" class="result-section"></div>
+                <div id="pre_pitch_invisivel-container" class="result-section"></div>
+                <div id="predicoes_futuro_completas-container" class="result-section"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Enhanced Scripts -->
+    <script src="{{ url_for('static', filename='js/enhanced_analysis.js') }}"></script>
+
+    <script>
+        // Enhanced initialization with professional features
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 ARQV30 Enhanced v2.0 - Interface Profissional Carregada');
+
+            initializeProfessionalInterface();
+            setupFormSteps();
+            updateSystemStatus();
+            setupKeyboardShortcuts();
+            initializeAnimations();
+        });
+
+        function initializeProfessionalInterface() {
+            // Animações suaves para os elementos
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.hero-professional, .analysis-form-section, .feature-item').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        function setupFormSteps() {
+            let currentStep = 1;
+            const totalSteps = 3;
+
+            const nextBtn = document.getElementById('nextStep');
+            const prevBtn = document.getElementById('prevStep');
+            const submitBtn = document.getElementById('submitForm');
+
+            function showStep(step) {
+                // Hide all steps
+                document.querySelectorAll('.form-step').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll('.step').forEach(el => {
+                    el.classList.remove('active', 'completed');
+                });
+
+                // Show current step
+                document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+                document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
+
+                // Mark previous steps as completed
+                for (let i = 1; i < step; i++) {
+                    document.querySelector(`.step[data-step="${i}"]`).classList.add('completed');
+                }
+
+                // Update navigation
+                prevBtn.style.display = step === 1 ? 'none' : 'flex';
+                nextBtn.style.display = step === totalSteps ? 'none' : 'flex';
+                submitBtn.style.display = step === totalSteps ? 'flex' : 'none';
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 1) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            });
+        }
+
+        function initializeAnimations() {
+            // Animação da preview de análise
+            const analysisLayers = document.querySelectorAll('.analysis-layer');
+            analysisLayers.forEach((layer, index) => {
+                layer.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            // Animação contínua dos agentes
+            setTimeout(() => {
+                document.querySelector('.hero-visual').classList.add('animate-active');
+            }, 1000);
+        }
+
+        async function updateSystemStatus() {
+            try {
+                const response = await fetch('/api/app_status');
+                const data = await response.json();
+
+                const statusElement = document.getElementById('systemStatus');
+                if (statusElement && data.services) {
+                    const searchProviders = data.services.search_providers;
+                    const aiProviders = data.services.ai_providers || { available: 1 };
+
+                    if (searchProviders.available > 0 && aiProviders.available > 0) {
+                        statusElement.className = 'status-enhanced status-online';
+                        statusElement.innerHTML = `
+                            <div class="status-dot pulse"></div>
+                            <span>Sistema Ultra-Robusto Operacional (${searchProviders.available} busca + ${aiProviders.available} IA)</span>
+                        `;
+                    } else {
+                        statusElement.className = 'status-enhanced status-warning';
+                        statusElement.innerHTML = `
+                            <div class="status-dot"></div>
+                            <span>Configuração Parcial - Alguns serviços indisponíveis</span>
+                        `;
+                    }
+                }
+            } catch (error) {
+                console.error('Erro ao verificar status:', error);
+                const statusElement = document.getElementById('systemStatus');
+                if (statusElement) {
+                    statusElement.className = 'status-enhanced status-warning';
+                    statusElement.innerHTML = `
+                        <div class="status-dot"></div>
+                        <span>Verificando conectividade...</span>
+                    `;
+                }
+            }
+        }
+
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                // Ctrl + Enter para submeter
+                if (e.ctrlKey && e.key === 'Enter') {
+                    e.preventDefault();
+                    const currentStepElement = document.querySelector('.form-step.active');
+                    const stepNumber = parseInt(currentStepElement.dataset.step);
+
+                    if (stepNumber === 3) {
+                        document.getElementById('enhancedAnalysisForm').dispatchEvent(new Event('submit'));
+                    } else {
+                        document.getElementById('nextStep').click();
+                    }
+                }
+
+                // Escape para fechar modais
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal-enhanced').forEach(modal => modal.remove());
+                }
+
+                // Setas para navegação entre steps
+                if (e.altKey) {
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        document.getElementById('nextStep').click();
+                    } else if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        document.getElementById('prevStep').click();
+                    }
+                }
+            });
+        }
+
+        // Validação aprimorada do formulário
+        function validateForm() {
+            const currentStepElement = document.querySelector('.form-step.active');
+            const stepNumber = parseInt(currentStepElement.dataset.step);
+
+            // Validações específicas por step
+            switch (stepNumber) {
+                case 1:
+                    const segmento = document.getElementById('segmento').value.trim();
+                    if (!segmento) {
+                        showEnhancedNotification('Segmento é obrigatório para análise arqueológica', 'error');
+                        return false;
+                    }
+                    if (segmento.length < 3) {
+                        showEnhancedNotification('Segmento deve ter pelo menos 3 caracteres', 'error');
+                        return false;
+                    }
+                    break;
+
+                case 2:
+                    // Validações opcionais para contexto psicológico
+                    break;
+
+                case 3:
+                    // Validação final
+                    const allRequiredFields = document.querySelectorAll('input[required], textarea[required]');
+                    const emptyFields = Array.from(allRequiredFields).filter(field => !field.value.trim());
+
+                    if (emptyFields.length > 0) {
+                        showEnhancedNotification('Preencha todos os campos obrigatórios', 'error');
+                        return false;
+                    }
+                    break;
+            }
+
+            return true;
+        }
+
+        function showEnhancedNotification(message, type = 'info', duration = 5000) {
+            const notification = document.createElement('div');
+            notification.className = `notification-enhanced notification-${type}`;
+
+            const icons = {
+                info: 'fas fa-info-circle',
+                success: 'fas fa-check-circle',
+                warning: 'fas fa-exclamation-triangle',
+                error: 'fas fa-exclamation-circle'
+            };
+
+            notification.innerHTML = `
+                <div class="notification-icon">
+                    <i class="${icons[type]}"></i>
+                </div>
+                <div class="notification-content">
+                    <div class="notification-title">${type.charAt(0).toUpperCase() + type.slice(1)}</div>
+                    <div class="notification-message">${message}</div>
+                </div>
+                <button class="notification-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+
+            // Container de notificações
+            let container = document.getElementById('notification-container'); // Corrected to use the new ID
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'notification-container'; // Assign the ID
+                container.className = 'notifications-container';
+                container.style.position = 'fixed';
+                container.style.top = '20px';
+                container.style.right = '20px';
+                container.style.zIndex = '9999';
+                container.style.maxWidth = '400px';
+                document.body.appendChild(container);
+            }
+
+            container.appendChild(notification);
+
+            // Auto remove
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.classList.add('notification-exit');
+                    setTimeout(() => notification.remove(), 300);
+                }
+            }, duration);
+        }
+
+        // Update progress with enhanced visuals
+        function updateProgressEnhanced(percentage, currentStep, timeRemaining, dataCollected) {
+            document.getElementById('progressPercentage').textContent = `${percentage}%`;
+            document.getElementById('currentStepEnhanced').textContent = currentStep;
+            document.getElementById('estimatedTimeEnhanced').textContent = timeRemaining;
+            document.getElementById('dataCollectedEnhanced').textContent = dataCollected;
+
+            // Update circular progress
+            const progressCircle = document.querySelector('.progress-circle');
+            if (progressCircle) {
+                progressCircle.style.setProperty('--progress', `${percentage}%`);
+            }
+
+            // Update agent status based on progress
+            updateAgentStatus(percentage);
+        }
+
+        function updateAgentStatus(percentage) {
+            const agents = document.querySelectorAll('.agent-card');
+
+            agents.forEach((agent, index) => {
+                const threshold = (index + 1) * 25;
+                const agentStatus = agent.querySelector('.agent-status');
+                const progressBar = agent.querySelector('.progress-bar');
+
+                if (percentage >= threshold - 10) {
+                    agent.classList.add('active');
+                    agentStatus.textContent = 'Ativo';
+                    progressBar.style.setProperty('--progress', '100%');
+                } else if (percentage >= threshold - 25) {
+                    agent.classList.add('working');
+                    agentStatus.textContent = 'Trabalhando';
+                    progressBar.style.setProperty('--progress', '50%');
+                } else {
+                    agentStatus.textContent = 'Aguardando';
+                    progressBar.style.setProperty('--progress', '0%');
+                }
+            });
+        }
+        
+        // Placeholder for the actual analysis start function
+        function startAnalysis() {
+            // This function should contain the logic to start the analysis process
+            // For now, let's just show a notification that it's starting
+            showEnhancedNotification('Iniciando análise...', 'info');
+            
+            // Simulate progress update (replace with actual progress tracking)
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                updateProgressEnhanced(progress, `Etapa ${progress/10} de 13`, '15:00', `${progress * 5} KB`);
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    showEnhancedNotification('Análise concluída!', 'success');
+                    // Optionally show results area
+                    // document.getElementById('resultsArea').style.display = 'block';
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>

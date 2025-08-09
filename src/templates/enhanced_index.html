@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARQV30 Enhanced v3.0 - Análise Ultra-Detalhada</title>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Sistema de análise ultra-detalhada com IA avançada para pesquisa de mercado e análise comportamental">
+    <meta name="keywords" content="análise mercado, inteligência artificial, pesquisa comportamental">
+    <meta name="author" content="ARQV30 Enhanced">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="{{ url_for('static', filename='js/analysis.js') }}" as="script">
+</head>
+<body>
+    <!-- Header Moderno -->
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    🚀
+                </div>
+                <div class="logo-text">
+                    <div class="logo-title">ARQV30 Enhanced</div>
+                    <div class="logo-subtitle">v3.0 - Interface Moderna</div>
+                </div>
+            </a>
+            
+            <nav class="header-nav">
+                <a href="/" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    Início
+                </a>
+                <a href="/forensic" class="nav-link">
+                    <i class="fas fa-microscope"></i>
+                    Forense
+                </a>
+                <a href="/archaeological" class="nav-link">
+                    <i class="fas fa-search"></i>
+                    Arqueológica
+                </a>
+                
+                <div class="status-indicator" id="statusIndicator">
+                    <div class="status-dot"></div>
+                    <span id="statusText">Sistema Online</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>Sistema Profissional de Análise</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Análise de Mercado
+                        <span class="hero-gradient">Ultra-Detalhada</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Sistema avançado de IA com Gemini 2.5 Pro, WebSailor e extração massiva de dados reais. 
+                        Zero simulação, máxima precisão para análise comportamental e estratégica.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Main Analysis Card -->
+            <section class="main-card animate-on-scroll">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <i class="fas fa-rocket"></i>
+                        Configure Sua Análise Profissional
+                    </h2>
+                    <p class="card-subtitle">
+                        Forneça os dados do seu projeto para uma análise completa e precisa
+                    </p>
+                </div>
+
+                <div class="card-body">
+                    <form id="analysisForm" class="analysis-form">
+                        <div class="form-grid">
+                            <!-- Informações Básicas -->
+                            <div class="form-group">
+                                <label for="segmento" class="form-label required">
+                                    <i class="fas fa-bullseye"></i>
+                                    Segmento de Mercado
+                                </label>
+                                <input type="text" id="segmento" name="segmento" class="form-input" 
+                                       placeholder="Ex: Tecnologia, Saúde, Educação, E-commerce..." 
+                                       required>
+                                <div class="form-hint">
+                                    <i class="fas fa-info-circle"></i>
+                                    Seja específico para obter análises mais precisas
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="produto" class="form-label">
+                                    <i class="fas fa-box"></i>
+                                    Produto ou Serviço
+                                </label>
+                                <input type="text" id="produto" name="produto" class="form-input"
+                                       placeholder="Nome do seu produto ou serviço">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="preco" class="form-label">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    Preço (R$)
+                                </label>
+                                <input type="number" id="preco" name="preco" class="form-input" 
+                                       step="0.01" placeholder="997.00">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="objetivo_receita" class="form-label">
+                                    <i class="fas fa-chart-line"></i>
+                                    Objetivo de Receita (R$)
+                                </label>
+                                <input type="number" id="objetivo_receita" name="objetivo_receita" 
+                                       class="form-input" step="0.01" placeholder="100000.00">
+                            </div>
+                        </div>
+
+                        <!-- Público-Alvo -->
+                        <div class="form-group">
+                            <label for="publico" class="form-label">
+                                <i class="fas fa-users"></i>
+                                Público-Alvo Detalhado
+                            </label>
+                            <textarea id="publico" name="publico" class="form-input form-textarea" rows="4"
+                                      placeholder="Descreva detalhadamente seu público-alvo ideal, incluindo dores, desejos, características demográficas e comportamentais..."></textarea>
+                            <div class="form-hint">
+                                <i class="fas fa-lightbulb"></i>
+                                Quanto mais detalhes, melhor será o avatar gerado
+                            </div>
+                        </div>
+
+                        <!-- Configurações Avançadas -->
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="orcamento_marketing" class="form-label">
+                                    <i class="fas fa-coins"></i>
+                                    Orçamento de Marketing (R$)
+                                </label>
+                                <input type="number" id="orcamento_marketing" name="orcamento_marketing" 
+                                       class="form-input" step="0.01" placeholder="10000.00">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prazo_lancamento" class="form-label">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Prazo de Lançamento
+                                </label>
+                                <select id="prazo_lancamento" name="prazo_lancamento" class="form-input">
+                                    <option value="">Selecione o prazo...</option>
+                                    <option value="1-3 meses">1-3 meses</option>
+                                    <option value="3-6 meses">3-6 meses</option>
+                                    <option value="6-12 meses">6-12 meses</option>
+                                    <option value="Mais de 1 ano">Mais de 1 ano</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="concorrentes" class="form-label">
+                                    <i class="fas fa-chess"></i>
+                                    Principais Concorrentes
+                                </label>
+                                <input type="text" id="concorrentes" name="concorrentes" class="form-input"
+                                       placeholder="Liste os principais concorrentes separados por vírgula">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="query" class="form-label">
+                                    <i class="fas fa-search"></i>
+                                    Query de Pesquisa
+                                </label>
+                                <input type="text" id="query" name="query" class="form-input"
+                                       placeholder="Ex: mercado telemedicina Brasil 2024">
+                                <div class="form-hint">
+                                    <i class="fas fa-robot"></i>
+                                    IA gerará automaticamente se deixado em branco
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contexto Adicional -->
+                        <div class="form-group">
+                            <label for="dados_adicionais" class="form-label">
+                                <i class="fas fa-plus-circle"></i>
+                                Contexto Adicional para Análise
+                            </label>
+                            <textarea id="dados_adicionais" name="dados_adicionais" 
+                                      class="form-input form-textarea" rows="6"
+                                      placeholder="Informações relevantes: dores específicas do público, objeções conhecidas, histórico de lançamentos, características psicológicas, etc..."></textarea>
+                        </div>
+
+                        <!-- File Upload (opcional) -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="fas fa-file-upload"></i>
+                                Arquivos de Apoio (Opcional)
+                            </label>
+                            <div id="dropZone" class="drop-zone">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Arraste arquivos aqui ou <strong>clique para selecionar</strong></p>
+                                <small>PDF, DOC, TXT - Máximo 10MB cada</small>
+                            </div>
+                            <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.txt" style="display: none;">
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="btn-group">
+                            <button type="button" id="saveBtn" class="btn btn-secondary" style="display: none;">
+                                <i class="fas fa-save"></i>
+                                Salvar Sessão
+                            </button>
+                            
+                            <button type="button" id="pauseBtn" class="btn btn-warning" style="display: none;">
+                                <i class="fas fa-pause"></i>
+                                Pausar
+                            </button>
+                            
+                            <button type="button" id="resumeBtn" class="btn btn-success" style="display: none;">
+                                <i class="fas fa-play"></i>
+                                Resumir
+                            </button>
+
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-rocket"></i>
+                                <span>Iniciar Análise Ultra-Detalhada</span>
+                                <div class="loading-spinner" style="display: none;"></div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Progress Container -->
+            <section id="progressContainer" class="progress-container" style="display: none;">
+                <div class="progress-header">
+                    <div class="progress-title">
+                        <i class="fas fa-cogs fa-spin"></i>
+                        Análise em Execução
+                    </div>
+                    <div class="progress-percentage">0%</div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 0%"></div>
+                </div>
+                
+                <div class="progress-status">
+                    Iniciando análise...
+                </div>
+            </section>
+
+            <!-- Session Management -->
+            <section class="session-controls animate-on-scroll">
+                <h3>
+                    <i class="fas fa-history"></i>
+                    Sessões Salvas
+                    <button id="refreshSessionsBtn" class="btn btn-secondary" style="margin-left: auto; font-size: 0.875rem;">
+                        <i class="fas fa-sync-alt"></i>
+                        Atualizar
+                    </button>
+                    <button id="clearSessionsBtn" class="btn btn-error" style="font-size: 0.875rem;">
+                        <i class="fas fa-trash"></i>
+                        Limpar Todas
+                    </button>
+                </h3>
+                
+                <div id="sessionsList">
+                    <!-- Sessões carregadas dinamicamente -->
+                </div>
+                
+                <div id="sessionDetails">
+                    <!-- Detalhes da sessão selecionada -->
+                </div>
+            </section>
+
+            <!-- Stats Grid -->
+            <section class="stats-grid animate-on-scroll">
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Camadas de Análise</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">19</div>
+                    <div class="stat-label">Drivers Mentais</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Dados Reais</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Simulação</div>
+                </div>
+            </section>
+
+            <!-- Results Container -->
+            <section id="resultsContainer" style="display: none;" class="results-container">
+                <!-- Resultados serão carregados dinamicamente -->
+            </section>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/analysis.js') }}"></script>
+    
+    <script>
+        // Inicialização adicional
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎯 Interface Moderna Carregada');
+            
+            // Atualiza status do sistema
+            updateSystemStatus();
+            
+            // Configura tooltips e animações
+            initializeEnhancements();
+        });
+
+        async function updateSystemStatus() {
+            try {
+                const response = await fetch('/api/app_status');
+                const data = await response.json();
+                
+                const statusIndicator = document.getElementById('statusIndicator');
+                const statusText = document.getElementById('statusText');
+                
+                if (data.services && data.services.search_providers.available > 0) {
+                    statusText.textContent = `Sistema Online (${data.services.search_providers.available} provedores)`;
+                    statusIndicator.style.color = 'var(--accent-emerald)';
+                } else {
+                    statusText.textContent = 'Configuração Parcial';
+                    statusIndicator.style.color = 'var(--accent-amber)';
+                }
+            } catch (error) {
+                console.warn('Erro ao verificar status:', error);
+                const statusText = document.getElementById('statusText');
+                statusText.textContent = 'Verificando...';
+            }
+        }
+
+        function initializeEnhancements() {
+            // Smooth scroll para links internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Auto-resize textareas
+            document.querySelectorAll('textarea').forEach(textarea => {
+                textarea.addEventListener('input', function() {
+                    this.style.height = 'auto';
+                    this.style.height = this.scrollHeight + 'px';
+                });
+            });
+
+            // Form validation visual feedback
+            const form = document.getElementById('analysisForm');
+            if (form) {
+                form.addEventListener('input', function(e) {
+                    const input = e.target;
+                    if (input.checkValidity()) {
+                        input.style.borderColor = 'var(--accent-emerald)';
+                    } else {
+                        input.style.borderColor = 'var(--accent-rose)';
+                    }
+                });
+            }
+
+            // Drop zone styling
+            const dropZone = document.getElementById('dropZone');
+            if (dropZone) {
+                dropZone.style.cssText = `
+                    border: 2px dashed var(--border-secondary);
+                    border-radius: var(--radius-xl);
+                    padding: 3rem;
+                    text-align: center;
+                    color: var(--text-secondary);
+                    background: var(--bg-elevated);
+                    cursor: pointer;
+                    transition: all var(--transition-base);
+                `;
+
+                dropZone.addEventListener('mouseenter', function() {
+                    this.style.borderColor = 'var(--primary-400)';
+                    this.style.background = 'var(--primary-50)';
+                });
+
+                dropZone.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('drag-over')) {
+                        this.style.borderColor = 'var(--border-secondary)';
+                        this.style.background = 'var(--bg-elevated)';
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
